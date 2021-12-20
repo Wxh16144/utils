@@ -1,0 +1,7 @@
+{
+  "_config_docs": "https://github.com/remy/nodemon#config-files",
+  "watch": ["src", "dev"],
+  "ext": "ts",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "esno dev/index.ts"
+}
