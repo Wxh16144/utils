@@ -12,6 +12,11 @@ module.exports = {
     // 个性化你的 Git Log 的输出格式 see:https://ruby-china.org/topics/939
     changelog: 'git log --pretty=format:"%s %C(bold blue)(%an)%Creset" --abbrev-commit',
   },
+  // @see https://github.com/release-it/release-it/blob/master/docs/github-releases.md
+  github: {
+    release: true,
+    web: true,
+  },
   hooks: {
     "before:init": ["npm run lint", "npm test"],
     'after:bump': ['npm run build', 'npm run changelog'],
