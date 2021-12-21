@@ -104,6 +104,9 @@ const NodeModuleConfig = [
       buildEsm({ file: resolveCwd(outputDir, 'node/index.esm.js') }),
     ],
     plugins: [].concat(globalPlugins, nodePlugins),
+    external: [
+      'crypto',
+    ],
   }),
   defineConfig({
     input: resolveCwd('./src/Node/index.ts'),
