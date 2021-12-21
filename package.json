@@ -5,6 +5,19 @@
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./dist/*",
+    "./browser": {
+      "import": "./dist/browser.esm.js",
+      "require": "./dist/browser.js",
+      "types": "./dist/browser.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
