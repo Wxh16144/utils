@@ -16,6 +16,11 @@
       "import": "./dist/browser.esm.js",
       "require": "./dist/browser.js",
       "types": "./dist/browser.d.ts"
+    },
+    "./object": {
+      "import": "./dist/object.esm.js",
+      "require": "./dist/object.js",
+      "types": "./dist/object.d.ts"
     }
   },
   "files": [
