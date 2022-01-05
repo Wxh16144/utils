@@ -1,3 +1,12 @@
+## [0.0.2-beta.2](https://github.com/Wxh16144/utils/compare/0.0.2-beta.1...0.0.2-beta.2) (2022-01-05)
+
+
+### Features
+
+* 添加 UUIDGenerator 方法 ([360f66b](https://github.com/Wxh16144/utils/commit/360f66b354c88bf7b733fef46a44e1a79d85f80d))
+
+
+
 ## [0.0.2-beta.1](https://github.com/Wxh16144/utils/compare/0.0.2-beta.0...0.0.2-beta.1) (2021-12-21)
 
 

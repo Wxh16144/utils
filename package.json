@@ -1,6 +1,6 @@
 {
   "name": "@wuxh/utils",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.2-beta.2",
   "description": "The TypeScript library template",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
@@ -9,18 +9,27 @@
     ".": {
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.min.js"
     },
     "./*": "./dist/*",
     "./browser": {
-      "import": "./dist/browser.esm.js",
-      "require": "./dist/browser.js",
-      "types": "./dist/browser.d.ts"
+      "import": "./dist/browser/index.esm.js",
+      "require": "./dist/browser/index.js",
+      "types": "./dist/browser/index.d.ts",
+      "default": "./dist/browser/index.min.js"
     },
     "./object": {
-      "import": "./dist/object.esm.js",
-      "require": "./dist/object.js",
-      "types": "./dist/object.d.ts"
+      "import": "./dist/object/index.esm.js",
+      "require": "./dist/object/index.js",
+      "types": "./dist/object/index.d.ts",
+      "default": "./dist/object/index.min.js"
+    },
+    "./node": {
+      "import": "./dist/node/index.esm.js",
+      "require": "./dist/node/index.js",
+      "types": "./dist/node/index.d.ts",
+      "default": "./dist/node/index.min.js"
     }
   },
   "files": [
@@ -56,7 +65,10 @@
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.2",
     "@types/jest": "^26.0.23",
+    "@types/randombytes": "^2.0.0",
     "@wuxh/commitlint-config": "0.0.2",
     "@wuxh/commitzen-config": "0.0.3",
     "@wuxh/eslint-config-ts": "0.0.3",
@@ -74,6 +86,7 @@
     "lint-staged": "^10.2.9",
     "lodash.merge": "^4.6.2",
     "nodemon": "^2.0.7",
+    "randombytes": "^2.1.0",
     "release-it": "^13.6.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.61.1",
@@ -107,5 +120,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "dependencies": {}
 }

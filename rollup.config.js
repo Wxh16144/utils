@@ -5,6 +5,8 @@ import esbuild from 'rollup-plugin-esbuild'
 import buble from '@rollup/plugin-buble'
 import { terser } from 'rollup-plugin-terser'
 import dts from 'rollup-plugin-dts'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 import merge from 'lodash.merge'
 import glob from 'glob'
 
@@ -12,7 +14,6 @@ import pkg from './package.json'
 
 const resolveCwd = (...arg) => path.resolve(process.cwd(), ...arg)
 const outputDir = resolveCwd('./dist')
-const descriptionEntryDir = resolveCwd('./temp')
 
 const libName = pkg.name.replace(/^@.*\//, '')
 const banner = `/*!
@@ -55,33 +56,64 @@ const globalPlugins = [
   buble(),
 ]
 
+const browserPlugins = [
+  nodeResolve({ browser: true, preferBuiltins: false }),
+  commonjs(),
+]
+
+const nodePlugins = [
+  nodeResolve(),
+  commonjs(),
+]
+
 const modules = glob.sync(resolveCwd('./src/*'))
 
 const modulesRollupConfigs = modules.reduce((configs, path) => {
-  if (fs.statSync(path).isDirectory()) {
-    const moduleName = path.split('/').pop()
+  const moduleName = path.split('/').pop()
+  if (fs.statSync(path).isDirectory() && moduleName !== 'Node') {
     const input = resolveCwd(path, 'index.ts')
+    const moduleNameLower = moduleName.toLowerCase()
     configs.push(
       defineConfig(
         {
           input,
           output: [
-            buildUmd({ file: resolveCwd(outputDir, `${moduleName.toLowerCase()}.js`), name: `${libName}${moduleName}` }),
-            buildUmdMin({ file: resolveCwd(outputDir, `${moduleName.toLowerCase()}.min.js`), name: `${libName}${moduleName}` }),
-            buildEsm({ file: resolveCwd(outputDir, `${moduleName.toLowerCase()}.esm.js`) }),
+            buildUmd({ file: resolveCwd(outputDir, `${moduleNameLower}/index.js`), name: `${libName}${moduleName}` }),
+            buildUmdMin({ file: resolveCwd(outputDir, `${moduleNameLower}/index.min.js`), name: `${libName}${moduleName}` }),
+            buildEsm({ file: resolveCwd(outputDir, `${moduleNameLower}/index.esm.js`) }),
           ],
-          plugins: globalPlugins,
+          plugins: [].concat(globalPlugins, browserPlugins),
         },
       ),
       defineConfig({
         input,
-        output: [buildDts({ file: resolveCwd(outputDir, `${moduleName.toLowerCase()}.d.ts`) })],
+        output: [buildDts({ file: resolveCwd(outputDir, `${moduleNameLower}/index.d.ts`) })],
         plugins: [dts()],
       }),
     )
   }
   return configs
 }, [])
+
+const NodeModuleConfig = [
+  defineConfig({
+    input: resolveCwd('./src/Node/index.ts'),
+    output: [
+      { file: resolveCwd(outputDir, 'node/index.js'), format: 'cjs', name: `${libName}Node`, sourcemap: 'inline', banner },
+      { file: resolveCwd(outputDir, 'node/index.min.js'), format: 'cjs', name: `${libName}Node`, banner, plugins: [terser()] },
+      buildEsm({ file: resolveCwd(outputDir, 'node/index.esm.js') }),
+    ],
+    plugins: [].concat(globalPlugins, nodePlugins),
+    external: [
+      'crypto',
+    ],
+  }),
+  defineConfig({
+    input: resolveCwd('./src/Node/index.ts'),
+    output: [buildDts({ file: resolveCwd(outputDir, 'node/index.d.ts') })],
+    plugins: [dts()],
+  }),
+]
 
 export default [].concat(
   defineConfig({
@@ -92,7 +124,7 @@ export default [].concat(
       buildEsm(),
       buildDts(),
     ],
-    plugins: globalPlugins,
+    plugins: [].concat(globalPlugins, browserPlugins),
   }),
   defineConfig({
     input: resolveCwd('./src/index.ts'),
@@ -100,4 +132,5 @@ export default [].concat(
     plugins: [dts()],
   }),
   modulesRollupConfigs,
+  NodeModuleConfig,
 )
