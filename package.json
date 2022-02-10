@@ -1,7 +1,7 @@
 {
   "name": "@wuxh/utils",
   "version": "0.0.2-beta.2",
-  "description": "The TypeScript library template",
+  "description": "工具集",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
@@ -51,6 +51,10 @@
     "release:minor": "release-it minor --ci",
     "release:minor:beta": "release-it minor --preReleaseId=beta --preRelease --ci",
     "cm": "git-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wxh16144/utils"
   },
   "keywords": [
     "template",
