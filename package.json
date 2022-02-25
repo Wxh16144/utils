@@ -30,6 +30,12 @@
       "require": "./dist/node/index.js",
       "types": "./dist/node/index.d.ts",
       "default": "./dist/node/index.min.js"
+    },
+    "./string": {
+      "import": "./dist/string/index.esm.js",
+      "require": "./dist/string/index.js",
+      "types": "./dist/string/index.d.ts",
+      "default": "./dist/string/index.min.js"
     }
   },
   "files": [

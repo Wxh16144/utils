@@ -1,5 +1,6 @@
 export * from './Browser'
 export * from './Object'
+export * from './String'
 
 /*
 export * from './Node' // not support
