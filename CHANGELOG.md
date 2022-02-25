@@ -1,3 +1,13 @@
+## [0.0.2](https://github.com/Wxh16144/utils/compare/0.0.2-beta.2...0.0.2) (2022-02-25)
+
+
+### Features
+
+* 新增一些方法 ([f7c5d8f](https://github.com/Wxh16144/utils/commit/f7c5d8ff54643b6b83a30b84fb7334792ebcd9eb))
+* **string:** 添加randomHexColorCode 方法 ([ea8fd37](https://github.com/Wxh16144/utils/commit/ea8fd378aa5c4a9a73731e7663a6176f458436de))
+
+
+
 ## [0.0.2-beta.2](https://github.com/Wxh16144/utils/compare/0.0.2-beta.1...0.0.2-beta.2) (2022-01-05)
 
 

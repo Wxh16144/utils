@@ -1,6 +1,6 @@
 {
   "name": "@wuxh/utils",
-  "version": "0.0.2-beta.2",
+  "version": "0.0.2",
   "description": "工具集",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
