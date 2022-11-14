@@ -2,6 +2,7 @@ export * from './Browser'
 export * from './Object'
 export * from './String'
 export * from './Math'
+export * from './Common'
 
 /*
 export * from './Node' // not support
