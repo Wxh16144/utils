@@ -1,9 +1,10 @@
-## [0.0.3](https://github.com/Wxh16144/utils/compare/0.0.2...0.0.3) (2022-11-14)
+## [0.0.4](https://github.com/Wxh16144/utils/compare/0.0.2...0.0.4) (2023-01-16)
 
 
 ### Features
 
-* add common function ([f8429f6](https://github.com/Wxh16144/utils/commit/f8429f6f8067e7c6da35c86be7c7d965d862b252))
+* add common function ([#2](https://github.com/Wxh16144/utils/issues/2)) ([04d6f5d](https://github.com/Wxh16144/utils/commit/04d6f5dc5cac687c48e7bdca0341d686cbd4bbbb))
+* **string:** add `isAbsoluteURL` ([ef7e365](https://github.com/Wxh16144/utils/commit/ef7e365cf5a69c3d81e82f1b81039236ddc9ad42))
 
 
 
