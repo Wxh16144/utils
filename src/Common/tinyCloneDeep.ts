@@ -6,18 +6,18 @@
  * const obj = { a: 1, b: { c: 2 }, d: [3, 4] };
  * const obj2 = tinyCloneDeep(obj);
  */
-function tinyCloneDeep(val: any) {
+function tinyCloneDeep<T = any>(val: T): T {
   if (Array.isArray(val))
-    return cloneArrayDeep(val)
+    return cloneArrayDeep(val) as T
   else if (typeof val === 'object' && val !== null)
     return cloneObjectDeep(val)
 
   return val
 }
 
-function cloneObjectDeep(val: any) {
+function cloneObjectDeep<T = Record<string | number | symbol, any>>(val: T): T {
   if (Object.getPrototypeOf(val) === Object.prototype) {
-    const res: Record<string, any> = {}
+    const res: Record<string | number | symbol, any> = {}
     // eslint-disable-next-line no-restricted-syntax
     for (const key in val)
       res[key] = tinyCloneDeep(val[key])
@@ -27,8 +27,8 @@ function cloneObjectDeep(val: any) {
   return val
 }
 
-function cloneArrayDeep(val: any[]) {
-  return val.map<any>(item => tinyCloneDeep(item))
+function cloneArrayDeep<T = any>(val: T[]): T[] {
+  return val.map(item => tinyCloneDeep(item))
 }
 
 export default tinyCloneDeep
