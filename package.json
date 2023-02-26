@@ -48,6 +48,12 @@
       "require": "./dist/math/index.js",
       "types": "./dist/math/index.d.ts",
       "default": "./dist/math/index.min.js"
+    },
+    "./advanced": {
+      "import": "./dist/advanced/index.esm.js",
+      "require": "./dist/advanced/index.js",
+      "types": "./dist/advanced/index.d.ts",
+      "default": "./dist/advanced/index.min.js"
     }
   },
   "files": [
