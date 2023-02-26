@@ -15,7 +15,7 @@ yarn add @wuxh/utils
 ```html
 <script src="https://unpkg.com/@wuxh/utils"></script>
 <script>
-  console.log(utils)
+  console.log(wuxhUtils)
 </script>
 <!-- or -->
 <script type="module">

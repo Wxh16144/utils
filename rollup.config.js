@@ -7,6 +7,7 @@ import { terser } from 'rollup-plugin-terser'
 import dts from 'rollup-plugin-dts'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import replace from '@rollup/plugin-replace'
 import merge from 'lodash.merge'
 import glob from 'glob'
 
@@ -15,9 +16,9 @@ import pkg from './package.json'
 const resolveCwd = (...arg) => path.resolve(process.cwd(), ...arg)
 const outputDir = resolveCwd('./dist')
 
-const libName = pkg.name.replace(/^@.*\//, '')
+const libName = 'wuxhUtils'
 const banner = `/*!
-* ${libName} v${pkg.version}
+* ${pkg.name} v${pkg.version}
 * (c) ${new Date().getFullYear()} ${pkg.author.name}<${pkg.author.email}>
 */`
 
@@ -54,6 +55,9 @@ const buildDts = config => merge(defineConfig({
 const globalPlugins = [
   esbuild(),
   buble(),
+  replace({
+    VERSION: pkg.version,
+  }),
 ]
 
 const browserPlugins = [
@@ -73,13 +77,14 @@ const modulesRollupConfigs = modules.reduce((configs, path) => {
   if (fs.statSync(path).isDirectory() && moduleName !== 'Node') {
     const input = resolveCwd(path, 'index.ts')
     const moduleNameLower = moduleName.toLowerCase()
+    const umdName = `${libName}_${moduleNameLower}`
     configs.push(
       defineConfig(
         {
           input,
           output: [
-            buildUmd({ file: resolveCwd(outputDir, `${moduleNameLower}/index.js`), name: `${libName}${moduleName}` }),
-            buildUmdMin({ file: resolveCwd(outputDir, `${moduleNameLower}/index.min.js`), name: `${libName}${moduleName}` }),
+            buildUmd({ file: resolveCwd(outputDir, `${moduleNameLower}/index.js`), name: umdName }),
+            buildUmdMin({ file: resolveCwd(outputDir, `${moduleNameLower}/index.min.js`), name: umdName }),
             buildEsm({ file: resolveCwd(outputDir, `${moduleNameLower}/index.esm.js`) }),
           ],
           plugins: [].concat(globalPlugins, browserPlugins),
