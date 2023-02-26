@@ -1,4 +1,4 @@
-import { isAbsoluteURL, toRGBArray } from '../src/String'
+import { isAbsoluteURL, randomHexColorCode, toRGBArray } from '../src/String'
 
 describe('String', () => {
   describe('isAbsoluteURL', () => {
@@ -12,6 +12,25 @@ describe('String', () => {
       expect(isAbsoluteURL('/foo/bar')).toBeFalsy();
     });
   });
+
+
+  describe('randomHexColorCode', () => {
+    test('should return a hex color code with length 6 by default', () => {
+      const hexColorCode = randomHexColorCode()
+      expect(hexColorCode).toMatch(/^#[0-9a-fA-F]{6}$/)
+    })
+
+    test('should return a hex color code with length 3', () => {
+      const hexColorCode = randomHexColorCode(3)
+      expect(hexColorCode).toMatch(/^#[0-9a-fA-F]{3}$/)
+    })
+
+    test('should return a hex color code with length 8', () => {
+      const hexColorCode = randomHexColorCode(8)
+      expect(hexColorCode).toMatch(/^#[0-9a-fA-F]{8}$/)
+    })
+  })
+
 
   describe("toRGBArray", () => {
     it("should convert 'rgb(255, 255, 255)' to [255, 255, 255]", () => {
