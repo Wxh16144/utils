@@ -63,7 +63,7 @@
     "start": "nodemon",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "test": "jest --coverage",
+    "test": "jest",
     "test:watch": "jest --watch",
     "prebuild": "npm run clean",
     "clean": "rimraf dist types",
