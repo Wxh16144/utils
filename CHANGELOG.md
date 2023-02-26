@@ -1,3 +1,13 @@
+## [0.0.5](https://github.com/Wxh16144/utils/compare/0.0.4...0.0.5) (2023-02-26)
+
+
+### Features
+
+* **advanced:** add `genCombinations` method ([c545b05](https://github.com/Wxh16144/utils/commit/c545b05e0da57d731b76504b8a6e35070a7e4454))
+* **common:** add `tinyCloneDeep` ([#4](https://github.com/Wxh16144/utils/issues/4)) ([33efc11](https://github.com/Wxh16144/utils/commit/33efc1101221c8e543ad582991250f9cc9924bd4))
+
+
+
 ## [0.0.4](https://github.com/Wxh16144/utils/compare/0.0.2...0.0.4) (2023-01-16)
 
 
