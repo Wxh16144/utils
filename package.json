@@ -97,6 +97,7 @@
     "@rollup/plugin-node-resolve": "^13.1.2",
     "@rollup/plugin-replace": "^5.0.2",
     "@types/jest": "^26.0.23",
+    "@types/node": "^18.14.2",
     "@types/randombytes": "^2.0.0",
     "@wuxh/commitlint-config": "0.0.2",
     "@wuxh/commitzen-config": "0.0.3",
