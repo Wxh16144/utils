@@ -12,7 +12,7 @@ type Obj = Record<string, any>
  * // {name: 'Adam', surname: 'Smith'}
  */
 const getURLParameters = (url = window?.location?.search): Obj =>
-  ((url.match(/([^?=&]+)(=([^&]*))/g) || []) as Obj[])
+  ((url.match(/([^?=&]+)(=([^&]*))/g) || []) as unknown as Obj[])
     .reduce<Record<string, string>>(
     (a, v) => {
       (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1))
