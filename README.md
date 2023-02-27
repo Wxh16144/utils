@@ -2,7 +2,7 @@
 
 工具集 [![CI status][github-action-image]][github-action-url] [![codecov][codecov-image]][codecov-url] [![NPM version][npm-image]][npm-url]
 
-[github-action-image]: https://github.com/Wxh16144/utils/workflows/main.yml/badge.svg
+[github-action-image]: https://github.com/Wxh16144/utils/actions/workflows/main.yml/badge.svg
 [github-action-url]: https://github.com/Wxh16144/utils/actions
 [codecov-image]: https://img.shields.io/codecov/c/github/Wxh16144/utils/master.svg?style=flat-square
 [codecov-url]: https://codecov.io/gh/Wxh16144/utils/branch/master
