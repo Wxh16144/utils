@@ -9,8 +9,6 @@ module.exports = {
     tagName: '${version}',
     push: true,
     pushRepo: 'origin',
-    // 个性化你的 Git Log 的输出格式 see:https://ruby-china.org/topics/939
-    changelog: 'git log --pretty=format:"%s %C(bold blue)(%an)%Creset" --abbrev-commit',
   },
   // @see https://github.com/release-it/release-it/blob/master/docs/github-releases.md
   github: {
@@ -19,9 +17,15 @@ module.exports = {
   },
   hooks: {
     "before:init": ["npm run lint", "npm test"],
-    'after:bump': ['npm run build', 'npm run changelog'],
+    'after:bump': ['npm run build'],
   },
   npm: {
     publish: true,
   },
+  plugins: {
+    "@release-it/conventional-changelog": {
+      preset: "angular",
+      infile: "CHANGELOG.md"
+    }
+  }
 }
