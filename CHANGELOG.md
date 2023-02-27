@@ -1,3 +1,12 @@
+
+
+# [1.0.0-beta.0](https://github.com/Wxh16144/utils/compare/0.0.5...1.0.0-beta.0) (2023-02-27)
+
+
+### Performance Improvements
+
+* rename ([5b64962](https://github.com/Wxh16144/utils/commit/5b6496249afeeb3f5dcdaae3b739bac6509b6c7a))
+
 ## [0.0.5](https://github.com/Wxh16144/utils/compare/0.0.4...0.0.5) (2023-02-26)
 
 
@@ -52,6 +61,3 @@
 ### Features
 
 * **browser:** 添加 getURLParameters 方法 ([0588d95](https://github.com/Wxh16144/utils/commit/0588d95eed2b55a5ffefb66dc9142ed20003797f))
-
-
-
