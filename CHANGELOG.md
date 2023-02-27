@@ -1,5 +1,7 @@
 
 
+# [1.0.0](https://github.com/Wxh16144/utils/compare/1.0.0-beta.0...1.0.0) (2023-02-27)
+
 # [1.0.0-beta.0](https://github.com/Wxh16144/utils/compare/0.0.5...1.0.0-beta.0) (2023-02-27)
 
 
