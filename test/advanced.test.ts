@@ -1,6 +1,6 @@
 // @ts-ignore
 
-import { genCombinations } from "../src/advanced";
+import { genCombinations } from "../src/Advanced";
 
 describe('Advanced', () => {
 
