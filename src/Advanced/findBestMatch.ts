@@ -15,7 +15,9 @@ function findBestMatch(strArr: string[], targetStr?: string) {
   let longestMatch = ''
   let currentMatch = ''
 
-  for (const str of strArr) {
+  for (let i = 0; i < strArr.length; i++) {
+    const str = strArr[i]
+
     if (str.includes(targetStr))
       return str
 
