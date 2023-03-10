@@ -1,5 +1,12 @@
 
 
+# [1.1.0](https://github.com/Wxh16144/utils/compare/1.0.0...1.1.0) (2023-03-10)
+
+
+### Features
+
+* add findBestMatch function ([#7](https://github.com/Wxh16144/utils/issues/7)) ([4794f41](https://github.com/Wxh16144/utils/commit/4794f41b93c0cfee9cf37780517d659ad789e837))
+
 # [1.0.0](https://github.com/Wxh16144/utils/compare/1.0.0-beta.0...1.0.0) (2023-02-27)
 
 # [1.0.0-beta.0](https://github.com/Wxh16144/utils/compare/0.0.5...1.0.0-beta.0) (2023-02-27)
