@@ -8,16 +8,14 @@ function permute(str: string): string[] {
     return [str]
   }
 
-  const perms = []
+  const perms: string[] = []
   for (let i = 0; i < str.length; i++) {
     const char = str[i]
     if (str.indexOf(char) !== i) {
       continue // Skip duplicate characters
     }
     const remainingString = str.slice(0, i) + str.slice(i + 1, str.length)
-    for (const subPerm of permute(remainingString)) {
-      perms.push(char + subPerm)
-    }
+    permute(remainingString).forEach(subPerm => perms.push(char + subPerm))
   }
 
   return perms

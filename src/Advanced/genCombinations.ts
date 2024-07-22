@@ -37,9 +37,7 @@ function genCombinations(arr: string[], options: Options = {}): string[] {
 
     // Generate permutations only if ignoreOrder is false
     if (!ignoreOrder) {
-      for (const perm of permute(combination)) {
-        combinations.push(perm)
-      }
+      permute(combination).forEach(perm => combinations.push(perm))
     }
     else {
       combinations.push(combination)
