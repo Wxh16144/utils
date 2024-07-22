@@ -111,11 +111,10 @@
     "eslint": "^9.7.0",
     "esno": "*",
     "glob": "^7.2.0",
-    "husky": "~4.3.4",
     "jest": "^27.0.1",
     "jsdom": "16.6.0",
     "jsdom-global": "3.0.2",
-    "lint-staged": "^10.2.9",
+    "lint-staged": "^15.2.7",
     "lodash.merge": "^4.6.2",
     "nodemon": "^2.0.7",
     "randombytes": "^2.1.0",
@@ -125,6 +124,7 @@
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-esbuild": "^4.2.3",
     "rollup-plugin-terser": "^7.0.2",
+    "simple-git-hooks": "^2.11.1",
     "ts-jest": "^27.0.0",
     "typedoc": "^0.22.10",
     "typescript": "^4.2.4"
@@ -137,18 +137,11 @@
       "config": "./node_modules/@wuxh/commitzen-config"
     }
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run test"
-    }
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{ts}": [
-      "npm run lint:fix",
-      "git add"
-    ]
+    "*": "eslint --fix"
   },
   "publishConfig": {
     "access": "public",
