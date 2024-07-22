@@ -99,6 +99,7 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.2",
     "@rollup/plugin-replace": "^5.0.2",
+    "@types/estree": "^1.0.5",
     "@types/jest": "^27.0.1",
     "@types/node": "^18.14.2",
     "@types/randombytes": "^2.0.0",
