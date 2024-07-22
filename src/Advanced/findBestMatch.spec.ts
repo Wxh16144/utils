@@ -9,7 +9,9 @@ describe('findBestMatch', () => {
 
   it('should return undefined if the first argument is not an array or the second argument is not a string', () => {
     expect(findBestMatch([], undefined)).toBeUndefined()
+    // @ts-expect-error
     expect(findBestMatch(undefined, 'test')).toBeUndefined()
+    // @ts-expect-error
     expect(findBestMatch('test', 'test')).toBeUndefined()
     expect(findBestMatch([], {} as string)).toBeUndefined()
     expect(findBestMatch({} as string[], 'test')).toBeUndefined()

@@ -2,7 +2,7 @@ import genCombinations from './genCombinations'
 
 describe('generateCombinations', () => {
   it('should return an empty array when input array is empty', () => {
-    const arr = []
+    const arr = [] as string[]
     const combinations = genCombinations(arr)
     expect(combinations).toEqual([])
   })
@@ -38,5 +38,80 @@ describe('generateCombinations', () => {
       'acde',
       'abcde',
     ])
+  })
+
+  describe('ignoreOrder option', () => {
+    it('should generate unique combinations ignoring order when ignoreOrder is true', () => {
+      expect(genCombinations(['a', 'b', 'a'], { ignoreOrder: true })).toEqual([
+        'a',
+        'b',
+        'ab',
+        'a',
+        'aa',
+        'ba',
+        'aba',
+      ])
+    })
+
+    it('should not ignore order when ignoreOrder is false', () => {
+      expect(genCombinations(['a', 'b', 'a'], { ignoreOrder: false })).toEqual([
+        'a',
+        'b',
+        'ab',
+        'ba',
+        'a',
+        'aa',
+        'ba',
+        'ab',
+        'aba',
+        'aab',
+        'baa',
+      ])
+    })
+
+    it('should generate all combinations ignoring order when ignoreOrder is false', () => {
+      expect(genCombinations(['a', 'b', 'c'], { ignoreOrder: false })).toEqual([
+        'a',
+        'b',
+        'ab',
+        'ba',
+        'c',
+        'ac',
+        'ca',
+        'bc',
+        'cb',
+        'abc',
+        'acb',
+        'bac',
+        'bca',
+        'cab',
+        'cba',
+      ])
+    })
+
+    it('should generate unique combinations ignoring order when ignoreOrder is true and mustInclude is a string', () => {
+      expect(genCombinations(['a', 'b', 'a'], { ignoreOrder: true, mustInclude: 'b' })).toEqual([
+        'b',
+        'ab',
+        'ba',
+        'aba',
+      ])
+    })
+
+    it('should generate all combinations when ignoreOrder is false and mustInclude is a string', () => {
+      expect(genCombinations(['a', 'b', 'c'], { ignoreOrder: false, mustInclude: 'b' })).toEqual([
+        'b',
+        'ab',
+        'ba',
+        'bc',
+        'cb',
+        'abc',
+        'acb',
+        'bac',
+        'bca',
+        'cab',
+        'cba',
+      ])
+    })
   })
 })
