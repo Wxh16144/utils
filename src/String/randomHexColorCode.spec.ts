@@ -1,18 +1,18 @@
-import randomHexColorCode from "./randomHexColorCode"
+import randomHexColorCode from './randomHexColorCode'
 
 describe('randomHexColorCode', () => {
-  test('should return a hex color code with length 6 by default', () => {
+  it('should return a hex color code with length 6 by default', () => {
     const hexColorCode = randomHexColorCode()
-    expect(hexColorCode).toMatch(/^#[0-9a-fA-F]{6}$/)
+    expect(hexColorCode).toMatch(/^#[0-9a-f]{6}$/i)
   })
 
-  test('should return a hex color code with length 3', () => {
+  it('should return a hex color code with length 3', () => {
     const hexColorCode = randomHexColorCode(3)
-    expect(hexColorCode).toMatch(/^#[0-9a-fA-F]{3}$/)
+    expect(hexColorCode).toMatch(/^#[0-9a-f]{3}$/i)
   })
 
-  test('should return a hex color code with length 8', () => {
+  it('should return a hex color code with length 8', () => {
     const hexColorCode = randomHexColorCode(8)
-    expect(hexColorCode).toMatch(/^#[0-9a-fA-F]{8}$/)
+    expect(hexColorCode).toMatch(/^#[0-9a-f]{8}$/i)
   })
 })

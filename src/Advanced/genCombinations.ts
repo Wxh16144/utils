@@ -1,4 +1,3 @@
-
 interface Options {
   /**
    * Must include
@@ -24,8 +23,9 @@ function genCombinations(arr: string[], options: Options = {}): string[] {
   for (let i = 1; i < max; i++) {
     let combination = ''
     for (let j = 0; j < len; j++) {
-      if (i & (1 << j))
+      if (i & (1 << j)) {
         combination += arr[j]
+      }
     }
     combinations.push(combination)
   }
