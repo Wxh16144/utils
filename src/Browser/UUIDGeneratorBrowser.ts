@@ -1,4 +1,3 @@
-
 /**
  * 在浏览器中生成一个UUID。
  * @returns uuid

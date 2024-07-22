@@ -1,3 +1,4 @@
+import permute from './permute'
 
 interface Options {
   /**
@@ -5,6 +6,11 @@ interface Options {
    * @default null
    */
   mustInclude?: string | string[]
+  /**
+   * Ignore order
+   * @default true
+   */
+  ignoreOrder?: boolean
 }
 
 /**
@@ -15,24 +21,32 @@ interface Options {
  * // => ['a', 'b', 'ab', 'c', 'ac', 'bc', 'abc']
  */
 function genCombinations(arr: string[], options: Options = {}): string[] {
-  const { mustInclude } = options
+  const { mustInclude, ignoreOrder = true } = options
   const len = arr.length
-  const max = 1 << len // max is the number of all possible combinations
+  const max = 1 << len
 
-  const combinations = []
+  let combinations = []
 
   for (let i = 1; i < max; i++) {
     let combination = ''
     for (let j = 0; j < len; j++) {
-      if (i & (1 << j))
+      if (i & (1 << j)) {
         combination += arr[j]
+      }
     }
-    combinations.push(combination)
+
+    // Generate permutations only if ignoreOrder is false
+    if (ignoreOrder) {
+      combinations.push(combination)
+    }
+    else {
+      permute(combination).forEach(perm => combinations.push(perm))
+    }
   }
 
   if (mustInclude) {
     const mustIncludeArr = Array.isArray(mustInclude) ? mustInclude : [mustInclude]
-    return combinations.filter(combination =>
+    combinations = combinations.filter(combination =>
       mustIncludeArr.every(item => combination.includes(item)),
     )
   }

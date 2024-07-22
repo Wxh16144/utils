@@ -1,4 +1,3 @@
-
 type Obj = Record<string, any>
 
 /**
@@ -14,11 +13,11 @@ type Obj = Record<string, any>
 const getURLParameters = (url = window?.location?.search): Obj =>
   ((url.match(/([^?=&]+)(=([^&]*))/g) || []) as unknown as Obj[])
     .reduce<Record<string, string>>(
-    (a, v) => {
-      (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1))
-      return a
-    },
-    {},
-  )
+      (a, v) => {
+        (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1))
+        return a
+      },
+      {},
+    )
 
 export default getURLParameters

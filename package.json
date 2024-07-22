@@ -1,61 +1,77 @@
 {
   "name": "@wuxh/utils",
   "version": "1.1.0",
+  "packageManager": "yarn@1.22.17",
   "description": "工具集",
-  "main": "./dist/index.js",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
+  "author": {
+    "name": "Wxh16144",
+    "email": "wxh16144@qq.com",
+    "url": "https://github.com/wxh16144"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wxh16144/utils"
+  },
+  "keywords": [
+    "template",
+    "typescript",
+    "jest"
+  ],
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js",
-      "types": "./dist/index.d.ts",
       "default": "./dist/index.min.js"
     },
     "./*": "./dist/*",
     "./common": {
+      "types": "./dist/common/index.d.ts",
       "import": "./dist/common/index.esm.js",
       "require": "./dist/common/index.js",
-      "types": "./dist/common/index.d.ts",
       "default": "./dist/common/index.min.js"
     },
     "./browser": {
+      "types": "./dist/browser/index.d.ts",
       "import": "./dist/browser/index.esm.js",
       "require": "./dist/browser/index.js",
-      "types": "./dist/browser/index.d.ts",
       "default": "./dist/browser/index.min.js"
     },
     "./object": {
+      "types": "./dist/object/index.d.ts",
       "import": "./dist/object/index.esm.js",
       "require": "./dist/object/index.js",
-      "types": "./dist/object/index.d.ts",
       "default": "./dist/object/index.min.js"
     },
     "./node": {
+      "types": "./dist/node/index.d.ts",
       "import": "./dist/node/index.esm.js",
       "require": "./dist/node/index.js",
-      "types": "./dist/node/index.d.ts",
       "default": "./dist/node/index.min.js"
     },
     "./string": {
+      "types": "./dist/string/index.d.ts",
       "import": "./dist/string/index.esm.js",
       "require": "./dist/string/index.js",
-      "types": "./dist/string/index.d.ts",
       "default": "./dist/string/index.min.js"
     },
     "./math": {
+      "types": "./dist/math/index.d.ts",
       "import": "./dist/math/index.esm.js",
       "require": "./dist/math/index.js",
-      "types": "./dist/math/index.d.ts",
       "default": "./dist/math/index.min.js"
     },
     "./advanced": {
+      "types": "./dist/advanced/index.d.ts",
       "import": "./dist/advanced/index.esm.js",
       "require": "./dist/advanced/index.js",
-      "types": "./dist/advanced/index.d.ts",
       "default": "./dist/advanced/index.min.js"
     }
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -76,45 +92,30 @@
     "release:minor:beta": "release-it minor --preReleaseId=beta --preRelease --ci",
     "cm": "git-commit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Wxh16144/utils"
-  },
-  "keywords": [
-    "template",
-    "typescript",
-    "jest"
-  ],
-  "author": {
-    "name": "Wxh16144",
-    "email": "wxh16144@qq.com",
-    "url": "https://github.com/wxh16144"
-  },
-  "license": "ISC",
   "devDependencies": {
+    "@antfu/eslint-config": "^2.23.1",
     "@release-it/conventional-changelog": "^5.1.1",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.2",
     "@rollup/plugin-replace": "^5.0.2",
+    "@types/estree": "^1.0.5",
     "@types/jest": "^27.0.1",
     "@types/node": "^18.14.2",
     "@types/randombytes": "^2.0.0",
     "@wuxh/commitlint-config": "0.0.2",
     "@wuxh/commitzen-config": "0.0.3",
-    "@wuxh/eslint-config-ts": "0.0.3",
     "commitizen": "~4.2.2",
     "commitlint": "~11.0.0",
     "conventional-changelog-cli": "^2.1.1",
     "cz-customizable": "~6.3.0",
-    "eslint": "^7.27.0",
+    "eslint": "^9.7.0",
     "esno": "*",
     "glob": "^7.2.0",
-    "husky": "~4.3.4",
     "jest": "^27.0.1",
     "jsdom": "16.6.0",
     "jsdom-global": "3.0.2",
-    "lint-staged": "^10.2.9",
+    "lint-staged": "^15.2.7",
     "lodash.merge": "^4.6.2",
     "nodemon": "^2.0.7",
     "randombytes": "^2.1.0",
@@ -124,6 +125,7 @@
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-esbuild": "^4.2.3",
     "rollup-plugin-terser": "^7.0.2",
+    "simple-git-hooks": "^2.11.1",
     "ts-jest": "^27.0.0",
     "typedoc": "^0.22.10",
     "typescript": "^4.2.4"
@@ -136,22 +138,14 @@
       "config": "./node_modules/@wuxh/commitzen-config"
     }
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run test"
-    }
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{ts}": [
-      "npm run lint:fix",
-      "git add"
-    ]
+    "*": "eslint --fix"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "packageManager": "yarn@1.22.17"
+  }
 }
