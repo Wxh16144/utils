@@ -36,11 +36,11 @@ function genCombinations(arr: string[], options: Options = {}): string[] {
     }
 
     // Generate permutations only if ignoreOrder is false
-    if (!ignoreOrder) {
-      permute(combination).forEach(perm => combinations.push(perm))
+    if (ignoreOrder) {
+      combinations.push(combination)
     }
     else {
-      combinations.push(combination)
+      permute(combination).forEach(perm => combinations.push(perm))
     }
   }
 
