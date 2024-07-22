@@ -1,3 +1,5 @@
+import permute from './permute'
+
 interface Options {
   /**
    * Must include
@@ -9,27 +11,6 @@ interface Options {
    * @default true
    */
   ignoreOrder?: boolean
-}
-
-function permute(str: any): any {
-  // Helper function to generate permutations of a string
-  if (str.length <= 1) {
-    return str
-  }
-
-  const perms = []
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i]
-    if (str.indexOf(char) !== i) {
-      continue // Skip duplicate characters
-    }
-    const remainingString = str.slice(0, i) + str.slice(i + 1, str.length)
-    for (const subPerm of permute(remainingString)) {
-      perms.push(char + subPerm)
-    }
-  }
-
-  return perms
 }
 
 /**
