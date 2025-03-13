@@ -1,5 +1,12 @@
 
 
+# [1.2.0](https://github.com/Wxh16144/utils/compare/1.1.0...1.2.0) (2025-03-13)
+
+
+### Features
+
+* add `toArray` `isNil` ([#9](https://github.com/Wxh16144/utils/issues/9)) ([0b18452](https://github.com/Wxh16144/utils/commit/0b1845244d9d31c71b3a9ccfb5032f41bc2885b3))
+
 # [1.1.0](https://github.com/Wxh16144/utils/compare/1.0.0...1.1.0) (2023-03-10)
 
 
