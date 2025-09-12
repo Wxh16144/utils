@@ -1,13 +1,19 @@
-export * from './Browser'
-export * from './Object'
-export * from './String'
-export * from './Math'
-export * from './Common'
-export * from './Advanced'
-
-/*
-export * from './Node' // not support
-you should use `import * as utils from 'packagename/node'` instead.
-*/
-
-export const version = 'VERSION'
+export * from './delay'
+export * from './findBestMatch'
+export * from './genCombinations'
+export * from './getURLParameters'
+export * from './isAbsoluteURL'
+export * from './isNil'
+export * from './objectToQueryString'
+export * from './permute'
+export * from './randomHexColorCode'
+export * from './randomIntArrayInRange'
+export * from './randomIntegerInRange'
+export * from './randomNumberInRange'
+export * from './tinyCloneDeep'
+export * from './toArray'
+export * from './toHSLArray'
+export * from './toHSLObject'
+export * from './toRGBArray'
+export * from './toRGBObject'
+export * from './UUIDGeneratorBrowser'

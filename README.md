@@ -20,13 +20,8 @@ yarn add @wuxh/utils
 ## Browser
 
 ```html
-<script src="https://unpkg.com/@wuxh/utils"></script>
-<script>
-  console.log(wuxhUtils)
-</script>
-<!-- or -->
 <script type="module">
-  import * as utils from 'https://unpkg.com/@wuxh/utils?module'
+  import * as utils from 'https://unpkg.com/@wuxh/utils'
   console.log(utils)
 </script>
 ```

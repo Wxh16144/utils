@@ -1,16 +1,21 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2017",
     "baseUrl": "./",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strict": true,
     "declaration": true,
+    "declarationDir": "./dist/types",
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true
   },
+  "references": [
+    { "path": "./tsconfig.node.json" }
+  ],
   "include": ["src"],
+  "exclude": ["src/node"],
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],
     "out": "docs"
