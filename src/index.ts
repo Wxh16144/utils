@@ -1,9 +1,9 @@
-export * from './aBrowser'
-export * from './aObject'
-export * from './aString'
-export * from './aMath'
-export * from './aCommon'
-export * from './aAdvanced'
+export * from './browser'
+export * from './object'
+export * from './string'
+export * from './math'
+export * from './common'
+export * from './advanced'
 
 /*
 export * from './Node' // not support
