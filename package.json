@@ -19,7 +19,7 @@
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json",
-    "./*": "./dist/*/index.js"
+    "./node": "./dist/node/index.js"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -40,6 +40,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^5.3.0",
     "@release-it/conventional-changelog": "^10.0.1",
+    "@types/node": "^24.3.1",
     "@wuxh/commitlint-config": "0.0.2",
     "@wuxh/commitzen-config": "0.0.3",
     "commitizen": "~4.3.1",

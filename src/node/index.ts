@@ -1,1 +1,1 @@
-export { default as UUIDGeneratorNode } from './UUIDGeneratorNode'
+export * from './UUIDGeneratorNode'
