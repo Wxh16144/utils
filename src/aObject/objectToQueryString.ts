@@ -10,14 +10,14 @@
 const objectToQueryString = (queryParameters: Record<string, any>): string => {
   return queryParameters
     ? Object
-      .entries(queryParameters)
-      .reduce(
-        (queryString, [key, val]) => {
-          const symbol = queryString.length === 0 ? '?' : '&'
-          return queryString += `${symbol}${key}=${val}`
-        },
-        '',
-      )
+        .entries(queryParameters)
+        .reduce(
+          (queryString, [key, val]) => {
+            const symbol = queryString.length === 0 ? '?' : '&'
+            return queryString += `${symbol}${key}=${val}`
+          },
+          '',
+        )
     : ''
 }
 
