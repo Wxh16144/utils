@@ -1,6 +1,6 @@
 // @see https://github.com/release-it/release-it/blob/master/config/release-it.json
 module.exports = {
-  //@see https://github.com/release-it/release-it/blob/master/docs/git.md
+  // @see https://github.com/release-it/release-it/blob/master/docs/git.md
   git: {
     requireCleanWorkingDir: true,
     requireUpstream: false,
@@ -16,16 +16,16 @@ module.exports = {
     web: true,
   },
   hooks: {
-    "before:init": ["npm run lint", "npm test"],
+    'before:init': ['npm run lint', 'npm test -- run'],
     'after:bump': ['npm run build'],
   },
   npm: {
     publish: true,
   },
   plugins: {
-    "@release-it/conventional-changelog": {
-      preset: "angular",
-      infile: "CHANGELOG.md"
-    }
-  }
+    '@release-it/conventional-changelog': {
+      preset: 'angular',
+      infile: 'CHANGELOG.md',
+    },
+  },
 }
