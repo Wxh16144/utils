@@ -1,4 +1,8 @@
+# Changelog
 
+# [2.0.0](https://github.com/Wxh16144/utils/compare/1.2.0...2.0.0) (2025-09-12)
+
+* Renovation ([#11](https://github.com/Wxh16144/utils/issues/11))
 
 # [1.2.0](https://github.com/Wxh16144/utils/compare/1.1.0...1.2.0) (2025-03-13)
 
