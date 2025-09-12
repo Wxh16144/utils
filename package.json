@@ -7,7 +7,7 @@
     "email": "wxh16144@qq.com",
     "url": "https://github.com/wxh16144"
   },
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Wxh16144/utils"
@@ -17,13 +17,13 @@
     "typescript"
   ],
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json",
-    "./node": "./dist/node/index.js"
+    "./node": "./dist/node/index.mjs"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
@@ -41,6 +41,7 @@
     "@antfu/eslint-config": "^5.3.0",
     "@release-it/conventional-changelog": "^10.0.1",
     "@types/node": "^24.3.1",
+    "@vitest/coverage-v8": "3.2.4",
     "@wuxh/commitlint-config": "0.0.2",
     "@wuxh/commitzen-config": "0.0.3",
     "commitizen": "~4.3.1",
@@ -48,9 +49,9 @@
     "conventional-changelog-cli": "^5.0.0",
     "cz-customizable": "~7.5.1",
     "lint-staged": "^16.1.6",
+    "release-it": "^15.6.0",
     "simple-git-hooks": "^2.13.1",
     "tsdown": "^0.15.0",
-    "tsx": "^4.20.5",
     "typedoc": "^0.28.12",
     "vitest": "^3.2.4"
   },

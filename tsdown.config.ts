@@ -6,5 +6,5 @@ export default defineConfig({
   unbundle: true,
   dts: {
     build: true,
-  }
+  },
 })

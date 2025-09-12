@@ -18,6 +18,7 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+bun.lock
 
 # Editor directories and files
 .idea

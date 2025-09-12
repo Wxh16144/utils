@@ -7,16 +7,17 @@
     "moduleResolution": "bundler",
     "strict": true,
     "declaration": true,
+    "declarationDir": "./dist/types",
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true
   },
+  "references": [
+    { "path": "./tsconfig.node.json" }
+  ],
   "include": ["src"],
   "exclude": ["src/node"],
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],
     "out": "docs"
-  },
-  "references": [
-    { "path": "./tsconfig.node.json" }
-  ]
+  }
 }
