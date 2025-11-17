@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.1.0](https://github.com/Wxh16144/utils/compare/1.2.0...2.1.0) (2025-11-17)
+
+
+### Features
+
+* add KeyboardListener class for keyboard event handling ([#13](https://github.com/Wxh16144/utils/issues/13)) ([4aac611](https://github.com/Wxh16144/utils/commit/4aac611d434863d152fd13f754cebe7997797bbd))
+
 # [2.0.0](https://github.com/Wxh16144/utils/compare/1.2.0...2.0.0) (2025-09-12)
 
 * Renovation ([#11](https://github.com/Wxh16144/utils/issues/11))
